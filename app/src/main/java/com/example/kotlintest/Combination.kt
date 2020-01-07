@@ -1,6 +1,6 @@
 package com.example.kotlintest
 
-class Combination(var shape: Int, var backgroundColor: Int, var shapeColor: Int) : ICombination {
+class Combination(var shape: Int, var backgroundColor: Int, var shapeColor: Int, var selectValue: Boolean) : ICombination {
 
     override fun getShapeValue(): Int {
         return shape;
@@ -12,6 +12,14 @@ class Combination(var shape: Int, var backgroundColor: Int, var shapeColor: Int)
 
     override fun getShapeColorValue(): Int {
         return shapeColor;
+    }
+
+    override fun getSelcteValue(): Boolean {
+        return selectValue;
+    }
+
+    override fun setSelcteValue(select: Boolean){
+        selectValue = select
     }
 
 }

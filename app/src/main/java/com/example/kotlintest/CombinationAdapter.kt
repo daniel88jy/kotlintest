@@ -4,12 +4,14 @@ import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.ImageView
 
 class CombinationAdapter : BaseAdapter {
+    var mContext: Context
+    var mCombinationList: ArrayList<ICombination>
 
-    constructor(context: Context, imageArr: Array<ImageView>) {
-
+    constructor(context: Context, combinationList: ArrayList<ICombination>) {
+        mContext = context
+        mCombinationList = combinationList
     }
 
     override fun getItem(position: Int): Any {
@@ -21,7 +23,7 @@ class CombinationAdapter : BaseAdapter {
     }
 
     override fun getCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return mCombinationList.size
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
